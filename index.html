@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <h1>Text compression Huffman and LZW</h1>
+    </div>
+        <div id="left">
+            <div id="algorithm-select">
+                <h3>Select algorithm</h3>
+                <select name="" id="althorithm">
+                    <option value="huffman">Huffman</option>
+                    <option value="lzw">LZW</option>
+                </select> 
+            </div>
+            <textarea name="" id="input" rows="10" cols="70" placeholder="Input your code here"></textarea>
+            <div>
+                <button type="button" id="encode">Encode</button>
+                <button type="button" id="decode">Decode</button>
+            </div>
+        </div>
+    <div id="right">
+        <h3>Table</h3>
+        <table></table>
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/system.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+            System.defaultJSExtensions = true;
+            System.import("./js/index.js");
+    </script>
+</body>
+</html>
