@@ -45,6 +45,31 @@ option{
     font-weight: bold;
     cursor: pointer;
 }
+input{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1; 
+}
+label {
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px;
+    margin-top: 200px;
+}
+input:focus + label,
+input + label:hover {
+    opacity: 0.6;
+    color: black;   
+
+}
 button{
     background-color: red;
     border: none;
@@ -65,3 +90,6 @@ table, th, td {
     width: fit-content;
     padding: 5px;
   }
+#compression-ratio{
+    font-weight: bold;
+}
