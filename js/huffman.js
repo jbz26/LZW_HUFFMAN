@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createTree = exports.getFrequency = exports.createCode=exports.encoding =exports.decoding= void 0;
+exports.createTree = exports.getFrequency = exports.createCode=exports.encoding =exports.decoding=exports.compress_ratio_Huffman= void 0;
 function getFrequency(text){
     let freq = new Map();
     for(let  i=0; i<text.length;i++){
@@ -117,3 +117,19 @@ function decoding(codes,text){
     return s;
 }
 exports.decoding=decoding;
+function compress_ratio_Huffman(text,codes){
+    let frequencyArr = getFrequency(text);
+    let before=text.length*8;
+    let after=0;
+    for (let i = 0; i < frequencyArr.length; i++) {
+        after+=frequencyArr[i][1]*(codes.get(frequencyArr[i][0])).length;
+    }
+    let CR=(before)/after;
+    let content='Length of input string: ' + text.length
+                +'<br> Total bits: '+ before
+                +'<br> Total bits after compress: ' + after 
+                +'<br> Compress ratio: '+ CR.toFixed(2)
+                +'<br> Space Savings: '+ ((1-1/CR)*100).toFixed(2) + "%";
+    return content;
+}
+exports.compress_ratio_Huffman=compress_ratio_Huffman;
