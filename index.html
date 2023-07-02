@@ -23,18 +23,23 @@
             <div>
                 <button type="button" id="encode">Encode</button>
                 <button type="button" id="decode">Decode</button>
+                <!--
+                <input type="file" name="file" id="file" class="inputfile" />
+                <label for="file">Choose a file</label> 
+                -->
             </div>
         </div>
     <div id="right">
         <h3>Table</h3>
         <table></table>
+        <p id="compression-ratio"></p>
     </div>
+</body>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/system.js"></script>
     <script src="./js/index.js"></script>
     <script>
-            System.defaultJSExtensions = true;
+            System.defaultJSExtensions  = true;
             System.import("./js/index.js");
     </script>
-</body>
 </html>
