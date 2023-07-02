@@ -112,32 +112,3 @@ function showTableOfLZW(codes){
     compress_ratio.empty();
     compress_ratio.append(content);
 };
-// Khởi tạo một đối tượng hình ảnh mới
-var img = new Image();
-
-// Nạp hình ảnh
-img.src = './icon.png';
-
-// Xử lý khi hình ảnh được nạp hoàn tất
-img.onload = function() {
-  // Tạo canvas để đọc nội dung hình ảnh và chuyển đổi nó thành mảng
-  var canvas = document.createElement('canvas');
-  canvas.width = img.width;
-  canvas.height = img.height;
-
-  var ctx = canvas.getContext('2d');
-  ctx.drawImage(img, 0, 0);
-
-  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-  // imageData.data chứa tất cả các giá trị RGBA của từng pixel trong hình ảnh
-  var pixels = imageData.data;
-
-  // Lưu các giá trị RGBA của từng pixel vào một mảng
-  var pixelArray = [];
-  for (var i = 0; i < pixels.length; i += 4) {
-    pixelArray.push([pixels[i], pixels[i+1], pixels[i+2], pixels[i+3]]);
-  }
-
-  console.log(pixelArray);
-};
